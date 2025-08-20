@@ -3,7 +3,7 @@
 import * as React from "react";
 import { CalendarIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { cva, type VariantProps } from "class-variance-authority";
-
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -47,8 +47,8 @@ const nepaliDatePickerVariants = cva(
 
 export interface NepaliDatePickerProps
   extends Omit<
-      React.ComponentProps<typeof PopoverTrigger>,
-      "asChild" | "value"
+      React.HTMLAttributes<HTMLDivElement | HTMLButtonElement>,
+      "defaultValue" | "onError"
     >,
     VariantProps<typeof nepaliDatePickerVariants> {
   value?: NepaliDate | null;
